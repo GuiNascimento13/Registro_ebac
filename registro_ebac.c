@@ -5,7 +5,7 @@
 //bibliotecas devem estar sempre no início do código
 
 
-int registrar() //Defindo a função Registrar
+int registrar() //Definindo a função Registrar
 {
 	setlocale(LC_ALL, "Portuguese"); //Definição de Linguagem
 	
@@ -46,7 +46,7 @@ int registrar() //Defindo a função Registrar
 	//Fim da coleta de dados 
 }
 
-int consultar() //Defindo a função Consultar
+int consultar() //Definindo a função Consultar
 {
 	setlocale(LC_ALL, "Portuguese"); //Definição de Linguagem
 	
@@ -121,7 +121,8 @@ int main()
 		printf("Escolha uma das opções do menu abaixo:\n\n ");
 		printf("\t1 - Registrar\n ");	
 		printf("\t2 - Consultar\n ");
-		printf("\t3 - Deletar\n\n ");
+		printf("\t3 - Deletar\n ");
+		printf("\t4 - Fechar Aplicação\n\n");
 		printf("Selecione uma das opções e tecle ENTER:"); 
 	
 		scanf("%d", &opcao); // Armazenamento de Ação do Usuário (Pressionar Tecla)
@@ -140,6 +141,11 @@ int main()
 					
 					case 3:
 					deletar();
+					break;
+					
+					case 4:
+					printf("Obrigado, até a próxima!");
+					return 0;
 					break;
 					
 					default:
