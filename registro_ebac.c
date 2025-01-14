@@ -108,50 +108,72 @@ int deletar() // Definindo a função Deletar
 
 int main()
 {
+	setlocale(LC_ALL, "Portuguese");// Definição da Linguagem
+	
 	int opcao=0; //Definição de variáveis
 	int loop=1;
+	char senha[]="a";
+	int comparar;
 	
-	for(loop=1;loop=1;) // Comando para sempre retornar ao MENU Inicial
+		//Início da tela de login.
+		printf("\t Registro EBAC \n\n ");
+		printf("Acessar como Administrador.\n\n");
+		printf("Digite a Senha:");
+		scanf("%s",senha);
+		
+		comparar = strcmp(senha,"admin");
+		//Fim da tela de login.
+		
+	if(comparar==0)
 	{
-		system("cls"); //Comando para limpar tela
-	
-		setlocale(LC_ALL, "Portuguese"); //Definição de Linguagem
-	
-		printf("\t Registro EBAC \n\n "); // Início do Menu
-		printf("Escolha uma das opções do menu abaixo:\n\n ");
-		printf("\t1 - Registrar\n ");	
-		printf("\t2 - Consultar\n ");
-		printf("\t3 - Deletar\n ");
-		printf("\t4 - Fechar Aplicação\n\n");
-		printf("Selecione uma das opções e tecle ENTER:"); 
-	
-		scanf("%d", &opcao); // Armazenamento de Ação do Usuário (Pressionar Tecla)
-	
-		system("cls"); // Fim do Menu
-	
-			switch(opcao) // Início da Seleção (Resposta à Ação do Usuário)	
-				{
-					case 1:
-					registrar();
-					break;
-					
-					case 2:
-					consultar();
-					break;
-					
-					case 3:
-					deletar();
-					break;
-					
-					case 4:
-					printf("Obrigado, até a próxima!");
-					return 0;
-					break;
-					
-					default:
-					printf("Opção Inválida!\n");
-					system("pause");
-					break;		
-					}//Fim da Seleção
+		system("cls");
+		
+		for(loop=1;loop=1;) // Comando para sempre retornar ao MENU Inicial
+		{
+			system("cls"); //Comando para limpar tela
+		
+			printf("\t Registro EBAC \n\n "); // Início do Menu
+			printf("Escolha uma das opções do menu abaixo:\n\n ");
+			printf("\t1 - Registrar\n ");	
+			printf("\t2 - Consultar\n ");
+			printf("\t3 - Deletar\n ");
+			printf("\t4 - Fechar Aplicação\n\n");
+			printf("Selecione uma das opções e tecle ENTER:"); 
+		
+			scanf("%d", &opcao); // Armazenamento de Ação do Usuário (Pressionar Tecla)
+		
+			system("cls"); // Fim do Menu
+		
+				switch(opcao) // Início da Seleção (Resposta à Ação do Usuário)	
+					{
+						case 1:
+						registrar();
+						break;
+						
+						case 2:
+						consultar();
+						break;
+						
+						case 3:
+						deletar();
+						break;
+						
+						case 4:
+						printf("Obrigado, até a próxima!");
+						return 0;
+						break;
+						
+						default:
+						printf("Opção Inválida!\n");
+						system("pause");
+						break;		
+					}//Fim da Seleção			
+		}
+	}
+	else
+	{
+		printf("Senha Inválida!");
 	}	
 }
+
+
